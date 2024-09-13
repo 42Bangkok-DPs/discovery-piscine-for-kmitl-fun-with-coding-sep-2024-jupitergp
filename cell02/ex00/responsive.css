@@ -1,0 +1,44 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+    height: 100vh;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgb(20, 16, 16);
+    font-size: 1.2em;
+    
+}
+
+.table1 {
+    background: #1529e0;
+    height: 100%;
+    
+    
+}
+
+.table2 {
+    background: #943535;
+    height: 100%;
+    
+}
+
+p {
+    color: antiquewhite;
+}
+
+@media (max-width: 768px) {
+    table {
+        height: auto; 
+    }
+
+    td {
+        display: block;
+        width: 100%;
+        padding: 50px 0; 
+        height: 50vh; 
+    }
+}
