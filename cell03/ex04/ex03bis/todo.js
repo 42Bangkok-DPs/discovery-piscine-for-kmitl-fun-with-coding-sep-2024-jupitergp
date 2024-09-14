@@ -26,7 +26,7 @@ $(document).ready(function() {
         $('.todo-item').each(function() {
             tasks.push($(this).text());
         });
-        // Encode the tasks array to a string and save it as a cookie
+    
         document.cookie = "tasks=" + encodeURIComponent(JSON.stringify(tasks)) + ";path=/";
     }
 
