@@ -70,7 +70,7 @@
                 const operator = $('#operator').val();
 
                 
-                const validNumberPattern = /^-?\d+(\.\d+)?$/;
+                const validNumberPattern = /^\d+(\.\d+)?$/;
 
                 
                 if (!validNumberPattern.test(leftOperandStr) || !validNumberPattern.test(rightOperandStr)) {
@@ -124,22 +124,15 @@
             let timer;
 
             
-            function resetTimer() {
             
-                clearInterval(timer);
                 
                 timer = setInterval(function() {
                     alert('Please, use me...');
                 }, 30000);
-            }
+            
 
             
-            resetTimer();
-
-            
-            $(document).mousemove(function() {
-                resetTimer();
-            });
+           
         });
     </script>
 
