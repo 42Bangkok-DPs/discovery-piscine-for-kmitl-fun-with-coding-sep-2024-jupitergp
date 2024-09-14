@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    // Load tasks from cookie if available
+    
     loadTasks();
 
-    // Add new task on button click
+    
     $('#new_task').click(function() {
         let task = prompt('Enter a new task:');
         if (task) {
@@ -11,12 +11,12 @@ $(document).ready(function() {
         }
     });
 
-    // Function to add task to the top of the list
+    /
     function addTask(task) {
         let taskDiv = $('<div></div>').addClass('todo-item').text(task);
         $('#ft_list').prepend(taskDiv);
 
-        // Click event to remove task
+        
         taskDiv.click(function() {
             if (confirm('Do you want to remove this task?')) {
                 $(this).remove();
@@ -25,7 +25,7 @@ $(document).ready(function() {
         });
     }
 
-    // Save tasks to cookies
+    
     function saveTasks() {
         let tasks = [];
         $('.todo-item').each(function() {
@@ -34,7 +34,7 @@ $(document).ready(function() {
         document.cookie = "tasks=" + JSON.stringify(tasks) + ";path=/";
     }
 
-    // Load tasks from cookies
+    
     function loadTasks() {
         let tasksCookie = getCookie('tasks');
         if (tasksCookie) {
@@ -43,7 +43,7 @@ $(document).ready(function() {
         }
     }
 
-    // Helper function to get cookie by name
+    
     function getCookie(name) {
         let cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {

@@ -65,14 +65,22 @@
         $(document).ready(function() {
 
             function calculate() {
-                const leftOperand = parseInt($('#leftOperand').val(), 10);
+                const leftOperandStr = $('#leftOperand').val();
+                const rightOperandStr = $('#rightOperand').val();
                 const operator = $('#operator').val();
-                const rightOperand = parseInt($('#rightOperand').val(), 10);
 
-                if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
-                    alert('Error :(');
+                
+                const validNumberPattern = /^-?\d+(\.\d+)?$/;
+
+                
+                if (!validNumberPattern.test(leftOperandStr) || !validNumberPattern.test(rightOperandStr)) {
+                    alert('Error');
                     return;
                 }
+
+                
+                const leftOperand = parseFloat(leftOperandStr);
+                const rightOperand = parseFloat(rightOperandStr);
 
                 let result;
                 switch (operator) {
@@ -102,7 +110,7 @@
                         result = leftOperand % rightOperand;
                         break;
                     default:
-                        alert('Error :(');
+                        alert('Error');
                         return;
                 }
 
@@ -110,13 +118,28 @@
                 console.log(result);
             }
 
-            // Bind click event using jQuery
+            
             $('#calculateButton').click(calculate);
 
-            // Alert every 30 seconds
-            setInterval(function() {
-                alert('Please, use me...');
-            }, 30000);
+            let timer;
+
+            
+            function resetTimer() {
+            
+                clearInterval(timer);
+                
+                timer = setInterval(function() {
+                    alert('Please, use me...');
+                }, 30000);
+            }
+
+            
+            resetTimer();
+
+            
+            $(document).mousemove(function() {
+                resetTimer();
+            });
         });
     </script>
 
