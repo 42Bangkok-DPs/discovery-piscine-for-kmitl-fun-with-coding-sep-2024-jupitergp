@@ -11,7 +11,7 @@ $(document).ready(function() {
         }
     });
 
-    /
+    
     function addTask(task) {
         let taskDiv = $('<div></div>').addClass('todo-item').text(task);
         $('#ft_list').prepend(taskDiv);
